@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy n Large Corporation - Dirección</title>
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/logo.ico?v=1748731719709"
+      type="image/png"
+    />
+    <script src="funciones.js"></script>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente similar a la de WALL-E (?)-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .bnl-font {
+        font-family: "Orbitron", sans-serif;
+      }
+      .bnl-bg {
+        background-color: black;
+      }
+      .img-bg {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20wall.png?v=1750210918325");
+        background-size: cover;
+      }
+      .img-bg2 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/space.jpg?v=1748752394631");
+        background-size: cover;
+      }
+      .img-bg3 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/fondo?v=1749338675834");
+        background-size: cover;
+      }
+      .img-bg4 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/organigrama?v=1749338622601");
+        background-size: auto;
+      }
+      .bnl-blue {
+        color: #0077b6; /* Azul corporativo BnL (?)*/
+      }
+      .bnl-grey {
+        color: #d7d7d7; /* Azul corporativo BnL (?)*/
+      }
+      .bnl-btn {
+        background-color: #0077b6;
+        color: white;
+      }
+      .bnl-btn:hover {
+        background-color: #003d7a;
+      }
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(150px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .animated-text {
+        animation: fadeInUp 1s ease-in-out;
+      }
+      body::-webkit-scrollbar {
+        width: 12px; /* width of the entire scrollbar */
+      }
+
+      body::-webkit-scrollbar-track {
+        background: black; /* color of the tracking area */
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: blue; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 3px solid black; /* creates padding around scroll thumb */
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- menu -->
+    <nav
+      class="bnl-bg shadow-lg fixed top-0 w-full z-50 border-b-4 border-blue-500"
+    >
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html">
+          <img
+            src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908"
+            style="width: 30%"
+          />
+        </a>
+        <div class="hidden md:flex space-x-8 bnl-font">
+            <a href="nosotros.html" class="text-white hover:text-gray-700">Nuestra Compañía</a>
+            <div class="relative">
+                <button onclick="toggleMenu()" class="text-white hover:text-gray-700">
+                    Nuestro Proceso
+                </button>
+                <div id="submenu1" class="absolute hidden bg-black text-white shadow-md rounded-lg mt-2 w-64">
+                    <a href="planeacion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Planeación</a>
+                    <a href="organización.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Organización</a>
+                    <a href="control.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Control</a>
+                    <a href="direccion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Dirección</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-white hover:text-gray-700">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+              />
+            </svg>
+          </a>
+          <button class="md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Encabezado  -->
+    <section class="img-bg text-white py-20 text-container">
+      <div
+        class="container mx-auto px-4 p-4 text-center"
+        style="padding-bottom: 15%"
+      >
+        <p
+          class="text-5xl mb-8 bnl-font font-bold animated-text"
+          style="margin-top: 100px"
+        >
+          DIRECCIÓN
+        </p>
+        <p class="text-xs mb-8 bnl-font text-grey-700 animated-text">
+          acerca de nuestra empresa
+        </p>
+      </div>
+    </section>
+
+    <!-- Recursos Humanos  -->
+    <nav class="bg-black p-4 bnl-font" style="padding-top: 5%">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-white">Recursos Materiales</h1>
+        <hr />
+      </div>
+    </nav>
+
+    <main class="container mx-auto p-4 mt-8 bg-black bnl-font text-white">
+
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <h3 class="text-xl font-bold text-black" style="padding-bottom: 5%">
+            🗺️ Gestión del inventario interplanetario
+          </h3>
+          <ul class="space-y-3 mb-4">
+            <li class="flex justify-between items-center">
+              <span class="text-gray-700">Los sistemas IA predicen la demanda de suministros en la Tierra y las colonias. 
+                Por ejemplo, el oxígeno, la comida sintética y los repuestos para robots.</span>
+            </li>
+            
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <h3 class="text-xl font-bold text-black" style="padding-bottom: 5%">
+            ⚙️ Mantenimientos preventivos
+          </h3>
+          <ul class="space-y-3 mb-4">
+            <li class="flex justify-between items-center text-center">
+              <span class="text-gray-700">Drones de carga.</span>
+              <span class="text-gray-700">Cúpulas de hábitats espaciales.</span>
+              <span class="text-gray-700">Terminales de venta automatizadas.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <h3 class="text-xl font-bold text-black" style="padding-bottom: 5%">
+            🪴 Diseño de espacios
+          </h3>
+          <ul class="space-y-3 mb-4">
+            <li class="flex justify-between items-center text-center">
+              <span class="text-gray-700">Las tiendas BnL en las estaciones espaciales están diseñadas para flotar en microgravedad; 
+                es decir, góndolas pegadas a las paredes.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="p-8">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/text.png?v=1750192951501"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+      </div>
+
+      <!-- Recursos Financieros  -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos Financieros</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+
+      <div class="container mx-auto px-4 grid items-center justify-center">
+        <img
+        src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/Green%20Flat%20Illustrative%20Retro%20Drinks%20Product%20Logo%20(13).png?v=1750199002495"
+        alt="imagen" class"max-w-lg mx-auto h-auto">
+        <h2 class="text-3xl font-bold mb-6 text-white text-center">
+          Presupuesto General
+        </h2>
+
+        <p class="text-white mb-4 text-center">Presupuestos asignados:</p>
+
+        <div class="list-disc pl-5 mb-4 text-white space-y-2 text-center">
+          <p>Innovación y Desarrollo: 60%</p>
+          <p>Expansión espacial: 30%</p>
+          <p>Publicidad: 10%</p>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Inversiones estratégicas</h1>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+              <li>Adquisición de asteroides ricos en minerales.</li>
+              <li>Patentes de tecnología de terraformación.</li>
+            </ul>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Alianzas rentables</h1>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+              <li>Con SpaceX para cohetes reutilizables.</li>
+              <li>Con NASA para “colonias compartidas”</li>
+            </ul>
+        </div>
+      </div>
+
+      <!-- Recursos Materiales  -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos Humanos</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/liderazgo.png?v=1750202563900"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Liderazgo y supervisión</h1>
+            <p class="text-gray-700 mb-4">Gerentes de colonias espaciales y supervisores robóticos que comparten la misión de 
+              garantizar que los empleados, humanos y androides, cumplan con los estándares de productividad, seguridad y 
+              servicio al cliente.</p>
+            
+        </div>
+      </div>
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Capacitación continua</h1>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Manejo de gravitación artificial.</li>
+                <li>Operación de naves autónomas.</li>
+                <li>Reparación y mantenimiento de robots modelo WALL-E o EVE.</li>
+                <li>Ética en la automatización total</li>
+            </ul>
+        </div>
+        <div class="p-8">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/capacitar.png?v=1750202960725"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+      </div>
+      
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/motivacion.png?v=1750203434734"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Motivación</h1>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+              <li>Incentivos como “Tickets para viajes orbitales” y bonos por cada nuevo planeta en el que colonice un miembro de BnL.</li>
+              <li>Se ofrecen turnos adaptados prácticamente a todos los ciclos de sueño actuales en el espacio.</li>
+            </ul>
+        </div>
+      </div>
+      
+      <!-- Recursos Tecnológicos  -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos Tecnológicos</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Software de punto de venta TPV galáctico</h1>
+            <p class="text-gray-700 mb-4 text-center">Acepta créditos BnL e implementa el pago por huella ocular.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Aplicaciones</h1>
+            <p class="text-gray-700 mb-4 text-center"><b>BnL Orbital App:</b> pedido de robots, reservas de viajes al espacio, entrega a la Luna.</p>     
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Logística autónoma</h1>
+            <p class="text-gray-700 mb-4 text-center">Flotas de naves sin tripulación para la logística de las colonias.</p>     
+        </div>
+      </div>
+
+      <br><br><br>
+      <p class="text-sm mb-8 bnl-font font-bold animated-text text-center">
+        Mensualmente se realizan evaluaciones a las máquinas y softwares instalados para verificar que estén en perfectas condiciones para seguir operando.
+      </p>
+      
+      
+      <!-- Recursos de Información -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos de Información</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+      
+      <h1 class="text-2xl font-bold mb-4 text-white text-center">SU HOGAR EN CUALQUIER GALAXIA 🌌</h1>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Campañas</h1>
+            <p class="text-sm mb-8 bnl-font animated-text text-center text-gray-700 space-y-2">Adopte un robot BnL 🤖 (¡con un descuento en su seguro de vida interplanetario!).</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center animated-text">Patentes de:</h1>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2 animated-text">
+              <li>Algoritmos de obediencia robótica.</li>
+              <li>Diseño de ciudades-burbuja espaciales.</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8" style="margin-top: 5%;">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/Green%20Flat%20Illustrative%20Retro%20Drinks%20Product%20Logo%20(14).png?v=1750204179147"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="p-8" style="margin-top: 5%;">
+          <br><br>
+          <h1 class="text-2xl font-bold mb-4 text-white text-center">Atención general</h1>
+            <p class="text-white mb-4 text-center">Teléfono: +52 55 1234 5678</p>  
+            <p class="text-white mb-4 text-center">Correo: contacto@BuynLarge.com</p>     
+            <br><br><br>
+          <h1 class="text-2xl font-bold mb-4 text-white text-center">Soporte Técnico</h1>
+            <p class="text-white mb-4 text-center">Teléfono: +52 55 2345 6789</p>  
+            <p class="text-white mb-4 text-center">Correo: soporte@BuynLarge.com</p>     
+        </div>
+      </div>
+      
+      
+      
+      
+    </main>
+
+    <!-- Footer -->
+    <footer class="bnl-bg text-white py-12">
+      <div class="container mx-auto px-4">
+        <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908"
+          style="width: 10%; padding-botom: 5%"
+        />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 bnl-font bnl-white">
+              Buy n Large Corporation
+            </h3>
+            <p class="text-gray-400 bnl-font text-justify text-xs">
+              Buy n Large transforma el futuro mediante innovación tecnológica, impulsa el desarrollo global con soluciones avanzadas y redefine la vida moderna a través del progreso continuo.
+            </p>
+            <p
+              class="text-white font-bold text-xs bnl-font"
+              style="padding-top: 5%"
+            >
+              <a href="nosotros.html">Conócenos</a>
+            </p>
+          </div>
+          <div>
+            <ul class="space-y-2 bnl-font text-xs">
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Términos y condiciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Política de devoluciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Soporte técnico</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-grey text-xs font-bold mb-4 bnl-font">
+              Contactanos
+            </h3>
+            <p class="text-white-400 bnl-font text-xs">
+              Servicio@buynlarge.com
+            </p>
+            <p class="text-white-400 bnl-font text-xs">834 111 2233</p>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-white-400 bnl-font"
+        >
+          <p>© 2025 Buy n Large Corporation. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy n Large Corporation - Control</title>
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/logo.ico?v=1748731719709"
+      type="image/png"
+    />
+    <script src="funciones.js"></script>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente similar a la de WALL-E (?)-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .bnl-font {
+        font-family: "Orbitron", sans-serif;
+      }
+      .bnl-bg {
+        background-color: black;
+      }
+      .img-bg {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20letters.png?v=1750212496567");
+        background-size: cover;
+      }
+      .img-bg2 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/space.jpg?v=1748752394631");
+        background-size: cover;
+      }
+      .img-bg3 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/fondo?v=1749338675834");
+        background-size: cover;
+      }
+      .img-bg4 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/organigrama?v=1749338622601");
+        background-size: auto;
+      }
+      .bnl-blue {
+        color: #0077b6; /* Azul corporativo BnL (?)*/
+      }
+      .bnl-grey {
+        color: #d7d7d7; /* Azul corporativo BnL (?)*/
+      }
+      .bnl-btn {
+        background-color: #0077b6;
+        color: white;
+      }
+      .bnl-btn:hover {
+        background-color: #003d7a;
+      }
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(150px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .animated-text {
+        animation: fadeInUp 1s ease-in-out;
+      }
+      body::-webkit-scrollbar {
+        width: 12px; /* width of the entire scrollbar */
+      }
+
+      body::-webkit-scrollbar-track {
+        background: black; /* color of the tracking area */
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: blue; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 3px solid black; /* creates padding around scroll thumb */
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- menu -->
+    <nav
+      class="bnl-bg shadow-lg fixed top-0 w-full z-50 border-b-4 border-blue-500"
+    >
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html">
+          <img
+            src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908"
+            style="width: 30%"
+          />
+        </a>
+        <div class="hidden md:flex space-x-8 bnl-font">
+            <a href="nosotros.html" class="text-white hover:text-gray-700">Nuestra Compañía</a>
+            <div class="relative">
+                <button onclick="toggleMenu()" class="text-white hover:text-gray-700">
+                    Nuestro Proceso
+                </button>
+                <div id="submenu1" class="absolute hidden bg-black text-white shadow-md rounded-lg mt-2 w-64">
+                    <a href="planeacion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Planeación</a>
+                    <a href="organización.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Organización</a>
+                    <a href="control.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Control</a>
+                    <a href="direccion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Dirección</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-white hover:text-gray-700">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+              />
+            </svg>
+          </a>
+          <button class="md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Encabezado  -->
+    <section class="img-bg text-white py-20 text-container">
+      <div
+        class="container mx-auto px-4 p-4 text-center"
+        style="padding-bottom: 15%"
+      >
+        <p
+          class="text-5xl mb-8 bnl-font font-bold animated-text"
+          style="margin-top: 100px"
+        >
+          CONTROL
+        </p>
+        <p class="text-xs mb-8 bnl-font text-grey-700 animated-text">
+          acerca de nuestra empresa
+        </p>
+      </div>
+    </section>
+
+    <!-- Recursos Humanos  -->
+    <nav class="bg-black p-4 bnl-font" style="padding-top: 5%">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-white">Recursos Humanos</h1>
+        <hr />
+      </div>
+    </nav>
+
+    <main class="container mx-auto p-4 mt-8 bg-black bnl-font text-white">
+      <br /><br />
+      
+       <p class="text-sm mb-8 bnl-font font-bold animated-text text-center">
+        En nuestra empresa se realizan revisiones periódicas del trabajo según la carga laboral:
+      </p>
+      
+      <br><br>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="">
+          <p class="text-xl mb-8 bnl-font font-bold animated-text text-center" style="">
+              Cada 15 días
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <p class="text-black mb-4 text-center">condiciones normales.</p>  
+        </div>
+      </div>
+      <br><br>
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="">
+          <p class="text-xl mb-8 bnl-font font-bold animated-text text-center" style="">
+              Cada 7 a 10 días
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <p class="text-black mb-4 text-center">Al presentarse trabajo más intenso.</p>  
+        </div>
+      </div>
+      <br><br><br>
+      
+       <p class="text-sm mb-8 bnl-font font-bold animated-text text-center">
+        En nuestra empresa se evalúa:
+      </p>
+      <br><br>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-black">
+        <div>
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+            <ul class="list-disc pl-5 mb-4 space-y-2">
+                <li>Avances.</li>
+                <li>Ideas.</li>
+                <li>Mejoras.</li>
+                <li>Opiniones de equipo</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+           <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20chica.png?v=1750214493373"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+             Estas tareas las realizan supervisores robóticos que garantizan que humanos y androides cumplan con los estándares de productividad, seguridad y servicio.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+            Se ofrecen capacitaciones continuas para que el personal domine temas como gravitación artificial, operación de naves autónomas, mantenimiento de robots y ética en automatización.
+          </p>
+        </div>
+      </div>
+      
+      <br />
+      <br />
+      
+      <!-- Recursos Tecnológicos  -->
+      
+    <nav class="bg-black p-4 bnl-font" style="padding-top: 5%">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-white">Recursos Tecnológicos</h1>
+        <hr />
+      </div>
+    </nav>
+      
+       <p class="text-3xl mb-8 bnl-font font-bold animated-text text-right" style="margin-top: 100px">
+        Evaluación del software
+      </p>
+
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-4 text-center text-black">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+            🎚️Escalabilidad.
+          </p>
+        </div>
+       <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+           🚅Velocidad de arranque y respuesta.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+            💻Correctas actualizaciones.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+            🔐Ausencia de Malware.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+           🎯Funcionalidad.
+          </p>
+        </div>
+      </div>
+      
+      <br />
+      <br />
+      
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-left" style="margin-top: 100px">
+        Evaluación del hardware
+      </p>
+
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-4 text-center text-black">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+            ⚠️Ausencia de Daños físicos.
+          </p>
+        </div>
+       <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+           ⚡Ausencia de signos de óxido.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+            💻Acumulación de polvo.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+            💧Indicadores de humedad.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-center">
+          <p>
+           ⌨️Signos de corrosión en conectores o circuitos.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Recursos Materiales  -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos Materiales</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">   
+            <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Inventario Interplanetario</h1>
+            <p class="text-gray-700 mb-4 text-center" style="padding-top:15%">Se hace inventario semanal de oxígeno, comida y repuestos. Si falta algo, se solicita a tiempo desde la Tierra o una colonia cercana.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">  
+            <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Mantenimientos preventivos</h1>
+            <p class="text-gray-700 mb-4 text-center" style="padding-top:15%">Se revisan todos los días los drones de carga, las cúpulas habitacionales y las terminales de venta para asegurar que funcionen bien.</p>
+        </div>
+        <div class="p-8">
+           <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/IMAGEN2.png?v=1750196562283"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+      </div>
+      
+     <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+       <div class="p-8">
+           <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20girl.png?v=1750217719164"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">   
+            <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Diseño de espacios</h1>
+            <p class="text-gray-700 mb-4 text-center" style="padding-top:15%">Se realiza una revisión que las góndolas estén bien pegadas a las paredes y que los productos no floten fuera de lugar.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">  
+            <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">No se logra cumplir</h1>
+            <p class="text-gray-700 mb-4 text-center" style="padding-top:15%">Los materiales o equipos que no cumplen con los estándares de calidad son retirados o reparados de inmediato para garantizar la seguridad y el correcto funcionamiento de la operación.</p>
+        </div>
+      </div>
+      
+      <!-- Recursos Financieros  -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos Financieros</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Presupuesto Vs Gasto Real</h1>
+            <p class="text-gray-700 mb-4 text-center">Cada mes se revisan los gastos reales y se comparan con el presupuesto asignado a cada área, siguiendo estándares de precisión y transparencia financiera. Se analizan desviaciones significativas para detectar posibles problemas.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Acciones correctivas</h1>
+            <p class="text-gray-700 mb-4 text-center">Si se identifican gastos que superan el presupuesto o se desvían de los objetivos, se implementan medidas como:</p>     
+        </div>
+        <div>
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20boy.png?v=1750218202152"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-black" style="margin-top: 5%;">
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+                <li>Ajustes de gastos en áreas no prioritarias.</li>
+                <li>Revisión y aprobación más estricta de futuras inversiones.</li>
+                <li>Mejoras.</li>
+                <li>Reducción temporal de gastos discrecionales hasta equilibrar el presupuesto.</li>
+            </ul>
+          </div>
+      </div>
+      <br><br>
+      <p class="text-sm mb-8 bnl-font font-bold animated-text text-center">
+        Se evalúan las inversiones estratégicas (como adquisición de asteroides y patentes) y las alianzas (con SpaceX y NASA) para garantizar que generen beneficios acordes a lo invertido.
+      </p>
+     
+      <!-- Recursos de Información -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos de Información</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+      
+   <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+     <div>
+       <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+            <p class="text-gray-700 mb-4 text-center">Se analizan los datos para encontrar patrones y tendencias que ayuden a tomar mejores decisiones, identificar oportunidades, resolver problemas o mejorar la eficiencia . </p>
+        </div>
+     <br>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <p class="text-gray-700 mb-4 text-center">Si el análisis de la información no es precisa entonces es irrelevante ya que no lleva a acciones concretas, desperdiciando recursos y afectando la toma de decisiones.</p>
+        </div>
+     </div>
+        <div>
+          <img
+          src=" https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20team.png?v=1750219218965"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+  </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bnl-bg text-white py-12">
+      <div class="container mx-auto px-4">
+        <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908"
+          style="width: 10%; padding-botom: 5%"
+        />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 bnl-font bnl-white">
+              Buy n Large Corporation
+            </h3>
+            <p class="text-gray-400 bnl-font text-justify text-xs">
+              Buy n Large transforma el futuro mediante innovación tecnológica, impulsa el desarrollo global con soluciones avanzadas y redefine la vida moderna a través del progreso continuo.
+            </p>
+            <p
+              class="text-white font-bold text-xs bnl-font"
+              style="padding-top: 5%"
+            >
+              <a href="nosotros.html">Conócenos</a>
+            </p>
+          </div>
+          <div>
+            <ul class="space-y-2 bnl-font text-xs">
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Términos y condiciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Política de devoluciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Soporte técnico</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-grey text-xs font-bold mb-4 bnl-font">
+              Contactanos
+            </h3>
+            <p class="text-white-400 bnl-font text-xs">
+              Servicio@buynlarge.com
+            </p>
+            <p class="text-white-400 bnl-font text-xs">834 111 2233</p>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-white-400 bnl-font"
+        >
+          <p>© 2025 Buy n Large Corporation. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy n Large Corporation - Nosotros</title>
+    <link rel="icon" href="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/logo.ico?v=1748731719709" type="image/png">
+  <script src="funciones.js"></script>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente similar a la de WALL-E (?)-->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .bnl-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .bnl-bg {
+            background-color: black;
+        }
+        .img-bg{
+            background-image: url('https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/nosotros.png?v=1748738968196');
+            background-size: cover;
+        }
+        .img-bg2{
+            background-image: url('https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/space.jpg?v=1748752394631');
+            background-size: cover;
+        }
+      .img-bg3{
+            background-image: url('https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/pexels-mikhail-nilov-9242837.jpg?v=1748819419106');
+            background-size: cover;
+        }
+      .img-bg4{
+            background-image: url('https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/wall-wb.jpg?v=1748822661904');
+            background-size: cover;
+        }
+        .bnl-blue {
+            color: #0077B6; /* Azul corporativo BnL (?)*/
+        }
+        .bnl-grey {
+              color: #d7d7d7; /* Azul corporativo BnL (?)*/
+          }
+        .bnl-btn {
+            background-color: #0077B6;
+            color: white;
+        }
+        .bnl-btn:hover {
+            background-color: #003D7A;
+        }
+      @keyframes fadeInUp {
+          from {
+              transform: translateY(150px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+        }
+
+        .animated-text {
+            animation: fadeInUp 1s ease-in-out;
+        }
+      body::-webkit-scrollbar {
+        width: 12px; /* width of the entire scrollbar */
+      }
+
+      body::-webkit-scrollbar-track {
+        background: black; /* color of the tracking area */
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: blue; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 3px solid black; /* creates padding around scroll thumb */
+      }
+    </style>
+</head>
+<body class="bg-black">
+    <!-- Navbar -->
+   <nav class="bnl-bg shadow-lg fixed top-0 w-full z-50 border-b-4 border-blue-500">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+          <a href="index.html"><img src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908" style="width: 30%;"></a>
+            <div class="hidden md:flex space-x-8 bnl-font">
+            <a href="nosotros.html" class="text-white hover:text-gray-700">Nuestra Compañía</a>
+            <div class="relative">
+                <button onclick="toggleMenu()" class="text-white hover:text-gray-700">
+                    Nuestro Proceso
+                </button>
+                <div id="submenu1" class="absolute hidden bg-black text-white shadow-md rounded-lg mt-2 w-64">
+                    <a href="planeacion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Planeación</a>
+                    <a href="organización.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Organización</a>
+                    <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Control</a>
+                    <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Dirección</a>
+                </div>
+            </div>
+        </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-white hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+                <button class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section  -->
+    <section class="img-bg text-white py-20">
+      <div class="container mx-auto px-4 p-4 text-center" style="padding-bottom: 15%; margin-top: 100px;">
+            <p class="text-sm mb-8 bnl-font text-grey-700 font-bold " style="margin-top: 50px">"Brindar tecnología robótica con corazón y conciencia que cuiden la Tierra, acompañando a las personas en una experiencia interplanetaria a través de la innovación."</p>
+      </div>
+    </section>
+  
+  
+  <!--Horarios y turnos -->
+   <section class="py-12 bg-black">
+        <div class="container mx-auto px-4 text-center">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+              <h2 class="text-5xl font-bold text-left bnl-font bnl-black text-white">100+</h2>
+              <p class="text-gray-200 bnl-font text-left">De personal, colaborando con nosotros.</p>
+            </div>
+            <div>
+              <h2 class="text-5xl font-bold text-left bnl-font bnl-black text-white">11k+</h2>
+              <p class="text-gray-200 bnl-font text-left">Mas de 11 mil personas usan nuestros productos y servicios.</p>
+            </div>
+            <div>
+              <h2 class="text-5xl font-bold text-left bnl-font bnl-black text-white">1,000</h2>
+              <p class="text-gray-200 bnl-font text-left">1,000 compañias escogieron Buy n Large.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+  
+  <section class="img-bg2 text-white py-20">
+      <div class="container mx-auto px-4 p-4 text-center" style="padding-bottom: 15%;">
+                <div class="font-bold bnl-font">
+                    Visión
+                </div>
+            <p class="text-sm mb-8 bnl-font text-grey-700" style="margin-top: 50px">"Ser la corporación líder en la venta de robots y la colonización espacial, evolucionando la manera en que la humanidad vive en el universo."</p>
+      </div>
+    </section>
+  
+  <section class="img-bg3 text-white py-20">
+      <div class="container mx-auto px-4 p-4 text-center" style="padding-bottom: 15%;">
+                <div class="font-bold bnl-font">
+                    Haciendo Historia
+                </div>
+            <p class="text-sm mb-8 bnl-font text-grey-700 text-center" style="margin-top: 50px">"Nuestros productos han acompañado a la humanidad en cada paso hacia el mañana, desde la revolución del comercio hasta la exploración intergaláctica."</p>
+      </div>
+    </section>
+  
+  <!-- Productos Destacados -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-12 bnl-font bnl-black text-white">Valores</h2>
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4">
+                <div class="bnl-font text-center pt-5 font-bold text-white">
+                  Humanidad
+                </div>
+              <p class="text-sm mb-8 bnl-font text-grey-700 text-center text-white" style="margin-top: 50px">Valoramos la conexión humana y el respeto hacia todas las formas de vida, poniendo la empatía en el centro de la tecnología.</p>
+            </div>
+             <div class="p-4">
+                <div class="bnl-font text-center pt-5 font-bold text-white">
+                  Compromiso
+                </div>
+              <p class="text-sm mb-8 bnl-font text-grey-700 text-center text-white" style="margin-top: 50px">Proporcionar productos y servicios que excedan las expectativas del cliente en cada interacción.</p>
+            </div>
+        </div>
+    </section>
+  <section class="container mx-auto px-4 py-12">
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4">
+                    <div class="bnl-font text-center pt-5 font-bold text-white">
+                      Integridad
+                    </div>
+                  <p class="text-sm mb-80 bnl-font text-grey-700 text-center text-white" style="margin-top: 50px">Actuar con honestidad, transparencia y responsabilidad social.</p>
+                </div>
+                 <div class="p-4">
+                    <div class="bnl-font text-center pt-5 font-bold text-white">
+                      Calidad
+                    </div>
+                  <p class="text-sm mb-8 bnl-font text-grey-700 text-center text-white" style="margin-top: 50px">Proporcionar el máximo de nuestras capacidades con la finalidad de brindar un servicio excepcional.</p>
+                </div>
+        </div>
+  </section>
+  
+  <section class="img-bg4 text-white py-20" style="margin-top:-50px">
+      <div class="container mx-auto px-4 p-4 text-center" style="padding-bottom: 15%;">
+                <div class="font-bold bnl-font">
+                    
+                </div>
+            <p class="text-sm mb-8 bnl-font text-grey-700" style="margin-top: 50px"></p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bnl-bg text-white py-12">
+        <div class="container mx-auto px-4">
+          <img src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908" style="width: 10%; padding-botom:5%">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 bnl-font bnl-white">Buy n Large Corporation</h3>
+                    <p class="text-gray-400 bnl-font text-justify text-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="text-gray-400 bnl-font text-justify text-xs">Donec vitae ex vel metus dapibus mattis vel vitae ligula. Phasellus sed viverra ipsum. </p>
+                    <p class="text-white font-bold text-xs bnl-font" style="padding-top:5%"><a href="#">Conócenos</a></p>
+                </div>
+                <div>
+                    <ul class="space-y-2 bnl-font text-xs">
+                        <li><a href="#" class="text-white-400 hover:text-gray-700">Términos y condiciones</a></li>
+                        <li><a href="#" class="text-white-400 hover:text-gray-700">Política de devoluciones</a></li>
+                        <li><a href="#" class="text-white-400 hover:text-gray-700">Soporte técnico</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-grey text-xs font-bold mb-4 bnl-font ">Contactanos</h3>
+                    <p class="text-white-400 bnl-font text-xs">Servicio@buynlarge.com</p>
+                    <p class="text-white-400 bnl-font text-xs">834 111 2233</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-white-400 bnl-font">
+                <p>© 2025 Buy n Large Corporation. Todos los derechos reservados.</p>
+                
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
