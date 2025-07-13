@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WALL-E | Buy n Large</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente similar a la de WALL-E -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .bnl-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .bnl-bg {
+            background-color: #b5d5fe; /* #FFD100; */
+        }
+        .bnl-blue {
+            color: #0057B7; 
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bnl-bg shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bnl-blue bnl-font">BUY n LARGE</a>
+            <a href="#" class="text-black hover:text-gray-700 flex items-center bnl-font">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+                <span class="ml-1">CARRITO</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenedor principal del producto -->
+    <main class="container mx-auto px-4 py-12">
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden border-4 border-blue-400">
+            <div class="md:flex">
+                <!-- Galería de imágenes -->
+                <div class="md:w-1/2 p-6 bg-gray-900">
+                    <div class="mb-4 flex justify-center">
+                        <img id="mainImage" src="https://via.placeholder.com/600x600/333333/FFFFFF?text=WALL-E" alt="WALL-E" class="w-full h-96 object-contain">
+                    </div>
+                    <div class="grid grid-cols-4 gap-2">
+                        <img src="https://via.placeholder.com/150/333333/FFFFFF?text=WALL-E+1" alt="WALL-E" class="h-20 cursor-pointer hover:opacity-80" onclick="changeImage(this)">
+                        <img src="https://via.placeholder.com/150/333333/FFFFFF?text=WALL-E+2" alt="WALL-E" class="h-20 cursor-pointer hover:opacity-80" onclick="changeImage(this)">
+                        <img src="https://via.placeholder.com/150/333333/FFFFFF?text=WALL-E+3" alt="WALL-E" class="h-20 cursor-pointer hover:opacity-80" onclick="changeImage(this)">
+                        <img src="https://via.placeholder.com/150/333333/FFFFFF?text=WALL-E+4" alt="WALL-E" class="h-20 cursor-pointer hover:opacity-80" onclick="changeImage(this)">
+                    </div>
+                </div>
+
+                <!-- Detalles del producto -->
+                <div class="md:w-1/2 p-6">
+                    <h1 class="text-4xl font-bold bnl-blue bnl-font mb-2">WALL-E</h1>
+                    <p class="text-xl bnl-font mb-4">Unidad de Limpieza Terrestre Clase W-A-L-L</p>
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ★★★★★ <span class="text-gray-600 ml-2">(4,821 reviews)</span>
+                        </div>
+                    </div>
+                    <p class="text-3xl font-bold bnl-blue mb-4">$9,999.99 <span class="text-lg line-through text-gray-500">$12,499.99</span></p>
+                    <p class="text-gray-600 mb-6">El último modelo de Unidad de Limpieza Terrestre, equipado con inteligencia AXi, compactador de basura de última generación y capacidad de aprendizaje emocional. ¡Ahora con un 20% de descuento por tiempo limitado!</p>
+
+                    <!-- Selector de modelo -->
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2 bnl-font">Modelo:</label>
+                        <div class="flex space-x-2">
+                            <button class="px-4 py-2 border rounded-lg hover:bg-gray-200 bnl-font">WALL-E Standard</button>
+                            <button class="px-4 py-2 border rounded-lg hover:bg-gray-200 bg-yellow-100 border-yellow-400 bnl-font">WALL-E Pro</button>
+                            <button class="px-4 py-2 border rounded-lg hover:bg-gray-200 bnl-font">WALL-E EVE Bundle</button>
+                        </div>
+                    </div>
+
+                    <!-- Botones de acción -->
+                    <div class="flex space-x-4 mb-8">
+                        <button class="bnl-bg text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-300 transition flex items-center bnl-font">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            AÑADIR AL CARRITO
+                        </button>
+                        <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition bnl-font">
+                            COMPRAR AHORA
+                        </button>
+                    </div>
+
+                    <!-- Especificaciones -->
+                    <div class="border-t border-gray-200 pt-4">
+                        <h3 class="font-bold bnl-blue bnl-font mb-2">ESPECIFICACIONES:</h3>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Función principal: Compactación y clasificación de residuos.</li>
+                            <li>Autonomía: 10 años con carga solar.</li>
+                            <li>Incluye: Sensor de vida vegetal, modo "EVE Companion".</li>
+                            <li>Garantía: 50 años BnL.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Descripción adicional -->
+            <div class="bnl-bg p-6">
+                <h2 class="text-2xl font-bold bnl-blue bnl-font mb-4">POR QUÉ ELEGIR WALL-E:</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold bnl-blue bnl-font mb-2">EFICIENCIA</h3>
+                        <p class="text-gray-600">Compacta 1,000 toneladas de basura por hora. ¡La mejor relación basura/energía del mercado!</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold bnl-blue bnl-font mb-2">INTELIGENCIA AXi</h3>
+                        <p class="text-gray-600">Aprende patrones de limpieza y desarrolla personalidad propia. ¡Casi humano!</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <h3 class="font-bold bnl-blue bnl-font mb-2">GARANTÍA BnL</h3>
+                        <p class="text-gray-600">Si se daña en 50 años, te lo reemplazamos. *Condiciones aplican.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer estilo BnL -->
+    <footer class="bnl-bg text-black py-8">
+        <div class="container mx-auto px-4 text-center bnl-font">
+            <p class="text-xl font-bold mb-2">BUY n LARGE</p>
+            <p>"Fixing the planet, one WALL-E at a time."</p>
+            <p class="mt-4">© 2805 Buy n Large Corporation. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script para cambiar imágenes -->
+    <script>
+        function changeImage(element) {
+            document.getElementById('mainImage').src = element.src;
+        }
+    </script>
+</body>
+</html>

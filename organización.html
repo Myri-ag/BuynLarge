@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy n Large Corporation - Organización</title>
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/logo.ico?v=1748731719709"
+      type="image/png"
+    />
+    <script src="funciones.js"></script>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente similar a la de WALL-E (?)-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .bnl-font {
+        font-family: "Orbitron", sans-serif;
+      }
+      .bnl-bg {
+        background-color: black;
+      }
+      .img-bg {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20museo.png?v=1749442523617");
+        background-size: cover;
+      }
+      .img-bg2 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/space.jpg?v=1748752394631");
+        background-size: cover;
+      }
+      .img-bg3 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/fondo?v=1749338675834");
+        background-size: cover;
+      }
+      .img-bg4 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/organigrama?v=1749338622601");
+        background-size: auto;
+      }
+      .bnl-blue {
+        color: #0077b6; /* Azul corporativo BnL (?)*/
+      }
+      .bnl-grey {
+        color: #d7d7d7; /* Azul corporativo BnL (?)*/
+      }
+      .bnl-btn {
+        background-color: #0077b6;
+        color: white;
+      }
+      .bnl-btn:hover {
+        background-color: #003d7a;
+      }
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(150px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .animated-text {
+        animation: fadeInUp 1s ease-in-out;
+      }
+      body::-webkit-scrollbar {
+        width: 12px; /* width of the entire scrollbar */
+      }
+
+      body::-webkit-scrollbar-track {
+        background: black; /* color of the tracking area */
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: blue; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 3px solid black; /* creates padding around scroll thumb */
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- menu -->
+    <nav
+      class="bnl-bg shadow-lg fixed top-0 w-full z-50 border-b-4 border-blue-500"
+    >
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="index.html">
+          <img
+            src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908"
+            style="width: 30%"
+          />
+        </a>
+        <div class="hidden md:flex space-x-8 bnl-font">
+            <a href="nosotros.html" class="text-white hover:text-gray-700">Nuestra Compañía</a>
+            <div class="relative">
+                <button onclick="toggleMenu()" class="text-white hover:text-gray-700">
+                    Nuestro Proceso
+                </button>
+                <div id="submenu1" class="absolute hidden bg-black text-white shadow-md rounded-lg mt-2 w-64">
+                    <a href="planeacion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Planeación</a>
+                    <a href="organización.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Organización</a>
+                    <a href="control.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Control</a>
+                    <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Dirección</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-white hover:text-gray-700">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+              />
+            </svg>
+          </a>
+          <button class="md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Encabezado  -->
+    <section class="img-bg text-white py-20 text-container">
+      <div
+        class="container mx-auto px-4 p-4 text-center"
+        style="padding-bottom: 15%"
+      >
+        <p
+          class="text-5xl mb-8 bnl-font font-bold animated-text"
+          style="margin-top: 100px"
+        >
+          ORGANIZACIÓN
+        </p>
+        <p class="text-xs mb-8 bnl-font text-grey-700 animated-text">
+          acerca de nuestra empresa
+        </p>
+      </div>
+    </section>
+
+    <!-- Recursos Humanos  -->
+    <nav class="bg-black p-4 bnl-font" style="padding-top: 5%">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-white">Recursos Humanos</h1>
+        <hr />
+      </div>
+    </nav>
+
+    <main class="container mx-auto p-4 mt-8 bg-black bnl-font text-white">
+      
+      
+      <!-- Recursos humanos -->
+      
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-right" style="margin-top: 100px">
+        Horarios y Turnos Terrestre
+      </p>
+       <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Turnos estándar : 8 horas </h1>
+            <p class="text-gray-700 mb-4 text-center">Turnos Horarios de Servicio en Tierra Lunes a Sábado, (domingo cerrado o solo servicios esenciales vía robots). </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Turno Matutino
+7:00AM – 3:00PM</h1>
+            <p class="text-gray-700 mb-4 text-center">Atención a clientes y logística terrestre.</p>     
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Turno Vespertino
+ 3:00 PM – 11:00 PM</h1>
+            <p class="text-gray-700 mb-4 text-center">Soporte técnico y ventas nocturnas.</p>     
+        </div>
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Turno Nocturno
+11:00 PM – 7:00 AM</h1>
+            <p class="text-gray-700 mb-4 text-center">Mantenimiento de robots y seguridad automatizada.</p>     
+        </div>
+      </div>
+      <br /><br /><br /><br />
+      
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-left" style="margin-top: 100px">
+        Horarios y Turnos Espaciales
+      </p>
+       <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Tiempo Estelar Universal - TEU
+Turnos espaciales (8 h + 2h de adaptación)</h1>
+            <p class="text-gray-700 mb-4 text-center">Horarios en Estaciones Espaciales BnL (Colonias y Centros de Servicio). 
+Operación continua (ciclos de 26 horas ajustados a gravedad artificial). </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Turno Alfa
+6:00 – 14:00 TEU</h1>
+            <p class="text-gray-700 mb-4 text-center">Ajustes para la jornada diaria.</p>     
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Turno Beta
+ 14:00 – 22:00 TEU</h1>
+            <p class="text-gray-700 mb-4 text-center">Mayor demanda de colonos.</p>     
+        </div>
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Turno Gamma
+22:00 – 6:00 TEU</h1>
+            <p class="text-gray-700 mb-4 text-center">Monitoreo automatizado con supervisión humana mínima. </p>     
+        </div>
+      </div>
+      <br /><br /><br /><br />
+
+      <!-- Recursos Financieros  -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos Financieros</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+
+      <p
+        class="text-3xl mb-8 bnl-font font-bold animated-text text-right"
+        style="margin-top: 5%"
+      >
+        Nuestro Presupuesto
+      </p>
+      <br /><br /><br />
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <h3 class="text-xl font-bold text-black" style="padding-bottom: 5%">
+            💪 Área de Recursos Humanos
+          </h3>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+               $ 1 , 000 , 000 . 00 MXN 
+            </p>
+          </span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <h3 class="text-xl font-bold text-black" style="padding-bottom: 5%">
+            📊 Área de Mercadotecnia
+          </h3>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+               $ 1 , 500 , 000 . 00 MXN 
+            </p>
+          </span>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <h3 class="text-xl font-bold text-black" style="padding-bottom: 5%">
+            💻 Área de Tecnología
+          </h3>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+               $ 3 , 000 , 000 . 00 MXN 
+            </p>
+          </span>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <h3 class="text-xl font-bold text-black" style="padding-bottom: 5%">
+            💰 Área Financiera
+          </h3>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+               $ 1 , 500 , 000 . 00 MXN 
+            </p>
+          </span>
+        </div>
+      </div>
+
+      <br />
+      <br />
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+       <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <h3 class="text-xl font-bold text-black" style="padding-bottom: 5%">
+            ⚙️ Manufactura y Producción
+          </h3>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+               $ 2 , 000 , 000 . 00 MXN 
+            </p>
+          </span>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <h3 class="text-xl font-bold text-black" style="padding-bottom: 5%">
+            🎯 Total
+          </h3>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+               $ 10 , 000 , 000 . 00 MXN 
+            </p>
+          </span>
+        </div>
+      </div>
+
+
+      <!-- Recursos Materiales  -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos Materiales</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-right" style="margin-top: 100px">
+        Terrestre
+      </p>
+
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/BnL%20tower2.png?v=1749445509955"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-black text-center">Sede Central (BnL Tower - Nueva York):</h1>
+            <p class="text-gray-700 mb-4"><b></b> Es el centro de las operaciones ejecutivas, de investigación y desarrollo, de las áreas clave para la toma de decisiones y la gestión global de la empresa. </p>
+            <p class="text-gray-700 mb-4"><b>Pisos Superiores:</b></p>
+
+
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Presidente y Vicepresidente.</li>
+                <li>Jefe Financiero y Departamento de Finanzas.</li>
+                <li>Jefe de Recursos Humanos y Departamento de Recursos Humanos.</li>
+            </ul>
+            <p class="text-gray-700 mb-4"><b>Pisos Medios:</b></p>
+                    <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                        <li>Jefe de Tecnología y Equipo de Desarrolladores.</li>
+                        <li>Jefe de Mercadotecnia y Departamento de Mercadotecnia.</li>
+                    </ul>
+            <p class="text-gray-700 mb-4"><b>Pisos Inferiores:</b></p>
+                    <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                        <li>Exhibición Interactiva de Robots (EVA y WALL-E).</li>
+                        <li>Salas de Control y Monitoreo Global.</li>
+                    </ul>
+        </div>
+      </div>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-black text-center">Tiendas BnL (Retail Terrestre)</h1>
+            <p class="text-gray-700 mb-4">Se centran en la experiencia del cliente y la distribución de productos y servicios.</p>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Personal de Ventas.</li>
+                <li>Representantes de Servicio al Cliente.</li>
+                <li>Puntos de Recolección/Entrega de Robots.</li>
+            </ul>
+          </div> 
+          <div class="p-8">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20tienda2.png?v=1749446332695"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+          </div>
+      </div>  
+      
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-left" style="margin-top: 100px">
+        Espacial
+      </p>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20sede2.png?v=1749446602029"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+           <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Sede Central (BnL Tower - Espacial):</h1>
+            <p class="text-gray-700 mb-4">Esta sede aloja los departamentos orientados a la operación y desarrollo en entornos extraterrestres, así como la investigación de nuevas tecnologías.</p>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Jefe de Manufactura y Producción.</li>
+                <li>Equipo de Desarrolladores (Robótica Espacial).</li>
+                <li>Personal de Soporte Técnico (Sistemas Espaciales).</li>
+            </ul>
+        </div>
+      </div>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Colonias Planetarias</h1>
+            <p class="text-gray-700 mb-4"><b>Hábitats: </b> Cúpulas geodésicas presurizadas.</p>
+            <p class="text-gray-700 mb-4"><b>Mobiliario: </b></p>
+                <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                    <li>Muebles plegables impresos en 3D con polvo marciano.</li>
+                    <li>Terminales de autoservicio para pedir suministros desde la Tierra.</li>
+                    <li>Gimnasios de gravedad artificial para evitar atrofia muscular.</li>       
+                </ul>
+        </div>
+        <div class="p-8">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20colonias2.png?v=1749449210060"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+      </div>
+      
+      <!-- Recursos Tecnológicos  -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos Tecnológicos</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+      
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-right" style="margin-top: 100px">
+        Terrestre
+      </p>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Sede Central (BnL Tower - Nueva York):</h1>
+            <p class="text-gray-700 mb-4"><b>Pisos Superiores (Ejecutivos y Finanzas):</b></p>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Software: Monday Sales CRM y HubSpot CRM para gestión de relaciones con inversores, ClickUp para gestión de proyectos estratégicos.</li>
+                <li>Hardware: Computadoras ecológicas y de bajo consumo, impresoras sostenibles.</li>
+            </ul>
+
+            <p class="text-gray-700 mb-4"><b>Pisos Medios (Tecnología y Mercadotecnia):</b></p>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Software: AutoCAD y SolidWorks para el diseño y desarrollo de robots, Pipedrive y HubSpot CRM para la gestión de ventas y marketing, ClickUp para la gestión de proyectos de desarrollo y campañas de marketing.</li>
+                <li>Hardware: Computadoras ecológicas y de alto rendimiento, sistemas de enfriamiento eficientes.</li>
+            </ul>
+
+            <p class="text-gray-700 mb-4"><b>Pisos Inferiores (Exhibición y Salas de Control):</b></p>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Software: Sistema para la gestión de clientes.</li>
+                <li>Hardware: Servidores optimizados, sistemas de visualización avanzados (pantallas holográficas y monitores 3D).</li>
+            </ul>
+        </div>
+        <div>
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Tiendas BnL (Retail Terrestre)</h1>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Software: Pipedrive para la gestión de ventas.</li>
+                <li>Hardware: Computadoras ecológicas y de bajo consumo, sistemas de enfriamiento eficientes.</li>
+            </ul>
+          </div>
+           <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20escaleras.png?v=1749442125092"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+      </div>
+      
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-left" style="margin-top: 100px">
+        Espacial
+      </p>
+      
+       <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Sede Central (BnL Tower - Espacial):</h1>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Software: AutoCAD y SolidWorks para el diseño de robots espaciales y la infraestructura, ClickUp para la gestión de proyectos de construcción y mantenimiento espacial.</li>
+                <li>Hardware: Computadoras ecológicas y de alto rendimiento adaptadas para entornos espaciales, servidores optimizados para la gestión de la infraestructura espacial.</li>
+            </ul>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8" style="margin-top: 5%;">
+          <h1 class="text-2xl font-bold mb-4 text-gray-800 text-center">Colonias Planetarias</h1>
+            <ul class="list-disc pl-5 mb-4 text-gray-700 space-y-2">
+                <li>Software: Software de gestión de recursos para el control de suministros y la producción local, software de comunicación para la coordinación con la Tierra.</li>
+                <li>Hardware: Computadoras ecológicas y resistentes, impresoras 3D sostenibles.</li>
+            </ul>
+        </div>
+      </div>
+      
+      
+      <!-- Recursos de Información -->
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 10%">
+        <div class="container mx-auto">
+          <h1 class="text-3xl font-bold text-white">Recursos de Información</h1>
+          <hr />
+        </div>
+      </nav>
+      <br /><br /><br /><br />
+      
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-right" style="margin-top: 100px">
+        Sede Central (BnL Tower - Nueva York)
+      </p>
+      <br><br>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="p-8">
+          <p class="text-xl mb-8 bnl-font font-bold animated-text text-center" style="margin-top: 100px">
+              Pisos Superiores (Ejecutivos y Finanzas):
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              ❔¿ Cómo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Reuniones ejecutivas (presenciales/virtuales), informes (ClickUp, HubSpot CRM), emails corporativos.</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              📅¿ Cuándo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Mensualmente para informes o según la necesidad (urgencias).</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              🤝¿ Por dónde ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Salas de videoconferencia, email.</p>  
+        </div>
+      </div>
+      <br><br><br>
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="p-8">
+          <p class="text-xl mb-8 bnl-font font-bold animated-text text-center" style="margin-top: 100px">
+              Pisos Medios (Tecnología y Mercadotecnia):
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              ❔¿ Cómo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Stand-ups diarios, revisiones de diseño, canales de ClickUp, informes de CRM.</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              📅¿ Cuándo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Semanalmente.</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              🤝¿ Por dónde ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">ClickUp, AutoCAD/SolidWorks, HubSpot/Pipedrive, email.</p>  
+        </div>
+      </div>
+      <br><br><br>
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="p-8">
+          <p class="text-xl mb-8 bnl-font font-bold animated-text text-center" style="margin-top: 100px">
+              Pisos Inferiores (Exhibición y Salas de Control):
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              ❔¿ Cómo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Monitoreo 24/7 (paneles 3D), informes automatizados de flotas, comunicación directa con soporte.</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              📅¿ Cuándo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Continuo (monitoreo), en tiempo real (incidentes).</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              🤝¿ Por dónde ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Paneles interactivos, sistemas de control, plataformas de monitoreo.</p>  
+        </div>
+      </div>
+      <br><br><br>
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-left" style="margin-top: 100px">
+        Tiendas BnL (Retail Terrestre)
+      </p>
+      <br><br>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="p-8">
+          <p class="text-xl mb-8 bnl-font font-bold animated-text text-center" style="margin-top: 100px">
+              General:
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              ❔¿ Cómo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Actualizaciones vía pantallas táctiles, informes de ventas (Pipedrive), capacitaciones virtuales.</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              📅¿ Cuándo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Diario (stock), semanal (ventas), según necesidad (soporte).</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              🤝¿ Por dónde ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Pantallas táctiles, Pipedrive, email, videollamada con sede.</p>  
+        </div>
+      </div>
+      <br><br><br>
+  
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-right" style="margin-top: 100px">
+        Sede Central (BnL Tower - Espacial):
+      </p>
+      <br><br>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="p-8">
+          <p class="text-xl mb-8 bnl-font font-bold animated-text text-center" style="margin-top: 100px">
+              General:
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              ❔¿ Cómo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Videoconferencias de alta resolución, intercambio de diseños (AutoCAD, SolidWorks), informes de progreso automatizados.</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              📅¿ Cuándo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Diarias (coordinación Tierra-Espacio), programadas (revisiones de diseño).</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              🤝¿ Por dónde ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Salas de comunicación satelital, ClickUp, sistemas de datos espaciales.</p>  
+        </div>
+      </div>
+      <br><br><br>
+      
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-left" style="margin-top: 100px">
+        Colonias Planetarias
+      </p>
+      <br><br>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="p-8">
+          <p class="text-xl mb-8 bnl-font font-bold animated-text text-center" style="margin-top: 100px">
+              General:
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              ❔¿ Cómo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Informes automatizados de robots/hábitat, solicitudes de suministros (terminales), comunicación por radio/videollamada.</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              📅¿ Cuándo ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Horario/diario (informes) o según la necesidad (suministros).</p>  
+        </div>
+        <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8">
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium space-y-3 mb-4 flex justify-center items-center">
+            <p>
+              🤝¿ Por dónde ?
+            </p>
+          </span>
+          <p class="text-black mb-4 text-center">Terminales de autoservicio, redes de comunicación, radios, sistemas de comunicación planetaria.</p>  
+        </div>
+      </div>
+      <br><br><br>
+      <p class="text-3xl mb-8 bnl-font font-bold animated-text text-right" style="margin-top: 100px">
+        Canales y Herramientas Generales
+      </p>
+      <br><br>
+      
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8" style="margin-top: 5%;">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl cliente2?v=1749451442845"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="p-8" style="margin-top: 5%;">
+          <br><br>
+          <h1 class="text-2xl font-bold mb-4 text-white text-center">Portal BnL</h1>
+            <p class="text-white mb-4 text-center">Centro de información y colaboración.</p>      
+            <br><br><br>
+          <h1 class="text-2xl font-bold mb-4 text-white text-center">Email Corporativo</h1>
+            <p class="text-white mb-4 text-center">Comunicaciones formales.</p>  
+        </div>
+      
+      
+      
+      
+      
+    </main>
+
+    <!-- Footer -->
+    <footer class="bnl-bg text-white py-12">
+      <div class="container mx-auto px-4">
+        <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908"
+          style="width: 10%; padding-botom: 5%"
+        />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 bnl-font bnl-white">
+              Buy n Large Corporation
+            </h3>
+            <p class="text-gray-400 bnl-font text-justify text-xs">
+              Buy n Large transforma el futuro mediante innovación tecnológica, impulsa el desarrollo global con soluciones avanzadas y redefine la vida moderna a través del progreso continuo.
+            </p>
+            <p
+              class="text-white font-bold text-xs bnl-font"
+              style="padding-top: 5%"
+            >
+              <a href="nosotros.html">Conócenos</a>
+            </p>
+          </div>
+          <div>
+            <ul class="space-y-2 bnl-font text-xs">
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Términos y condiciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Política de devoluciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Soporte técnico</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-grey text-xs font-bold mb-4 bnl-font">
+              Contactanos
+            </h3>
+            <p class="text-white-400 bnl-font text-xs">
+              Servicio@buynlarge.com
+            </p>
+            <p class="text-white-400 bnl-font text-xs">834 111 2233</p>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-white-400 bnl-font"
+        >
+          <p>© 2025 Buy n Large Corporation. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

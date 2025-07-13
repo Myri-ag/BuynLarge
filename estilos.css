@@ -1,0 +1,48 @@
+.bnl-font {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.bnl-bg {
+  background-color: black;
+}
+.img-bg{
+  background-image: url('https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/main.jpg?v=1748726260096');
+  background-size: cover;
+}
+.bnl-blue {
+  color: #0077B6; /* Azul corporativo BnL (?)*/
+}
+.bnl-btn {
+  background-color: #0077B6;
+  color: white;
+}
+.bnl-btn:hover {
+  background-color: #003D7A;
+}
+@keyframes fadeInUp {
+          from {
+              transform: translateY(150px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+        }
+
+        .animated-text {
+            animation: fadeInUp 1s ease-in-out;
+        }
+body::-webkit-scrollbar {
+        width: 12px; /* width of the entire scrollbar */
+      }
+
+      body::-webkit-scrollbar-track {
+        background: black; /* color of the tracking area */
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: blue; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 3px solid black; /* creates padding around scroll thumb */
+      }

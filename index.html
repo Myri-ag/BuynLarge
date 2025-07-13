@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy n Large Corporation</title>
+    <link rel="icon" href="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/logo.ico?v=1748731719709" type="image/png">
+    <link rel="stylesheet" href="estilos.css">
+  <script src="funciones.js"></script>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <!-- Fuente similar a la de WALL-E (?)-->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  
+    
+</head>
+<body class="bg-black">
+    <!-- Navbar -->
+   <nav class="bnl-bg shadow-lg fixed top-0 w-full z-50 border-b-4 border-blue-500">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+          <a href="index.html"><img src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908" style="width: 30%;"></a>
+            <div class="hidden md:flex space-x-8 bnl-font">
+            <a href="nosotros.html" class="text-white hover:text-gray-700">Nuestra Compañía</a>
+            <div class="relative">
+                <button onclick="toggleMenu()" class="text-white hover:text-gray-700">
+                    Nuestro Proceso
+                </button>
+                <div id="submenu1" class="absolute hidden bg-black text-white shadow-md rounded-lg mt-2 w-64">
+                    <a href="planeacion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Planeación</a>
+                    <a href="organización.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Organización</a>
+                    <a href="control.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Control</a>
+                    <a href="direccion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Dirección</a>
+                </div>
+            </div>
+            <a href="productos.html" class="text-white hover:text-gray-700">Productos</a>
+            <a href="servicios.html" class="text-white hover:text-gray-700">Servicios</a>
+        </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-white hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+                <button class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section  -->
+    <section class="img-bg text-white py-20">
+      <div class="container mx-auto px-4 p-4 text-center" style="padding-bottom: 15%;">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 bnl-font animated-text" style="padding-top: 100px;">BIENVENIDO A BUY n LARGE</h1>
+            <p class="text-xl mb-8 bnl-font animated-text">“Automatizando hoy, construyendo el mañana”</p>
+      </div>
+    </section>
+  
+  <!-- Productos Destacados -->
+    <section class="container mx-auto px-4 py-12 text-white">
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 5%">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-white">Descubre</h1>
+        <hr />
+      </div>
+    </nav>
+      
+      <p
+        class="text-3xl mb-8 bnl-font font-bold animated-text text-right"
+        style="margin-top: 100px"
+      >
+        La experiencia inolvidable de estar en el espacio
+      </p>
+      
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-4 bnl-font">
+          <div>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-black" style="margin-top: 5%;">
+                    El Axioma es una estación espacial diseñada para ofrecer comodidad, tecnología de vanguardia y un entorno autosuficiente. El Axioma es el destino definitivo para quienes buscan una nueva frontera.</div>
+            <br>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-blue-500 p-8 text-black" style="margin-top: 5%;">
+                  En BnL, creemos que el futuro es ahora, y el Axioma es la prueba de que el espacio no es solo para explorarlo, sino para disfrutarlo plenamente.
+            </div>
+          </div>
+            <div class="">
+              <img
+              src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/nave2.png?v=1750219733010"
+              alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        </div>
+    </section>
+
+    <!-- Productos Destacados -->
+    <section class="container mx-auto px-4 py-12">
+        <nav class="bg-black p-4 bnl-font" style="padding-top: 5%">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-white">Destacados</h1>
+        <hr />
+      </div>
+    </nav>
+      <br><br><br>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+            <!-- Producto 1: WALL-E -->
+            <div class="bg-white shadow-xl overflow-hidden hover:shadow-[0px_4px_10px_rgba(255,255,255,0.8)] transition border-4">
+                <img src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20axiom.png?v=1750220649514" alt="Estacion_Espacial" class="w-full h-48 object-contain bg-gray-100 p-4">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 bnl-font">Axioma</h3>
+                    <p class="text-gray-600 mb-4">La joya de la flota de BnL: el Axioma.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold bnl-blue">$9,999.99</span>
+                    </div>
+                </div>
+            </div>
+          
+          
+            <!-- Producto 1: WALL-E -->
+            <div class="bg-white shadow-xl overflow-hidden hover:shadow-2xl hover:shadow-[0px_4px_10px_rgba(255,255,255,0.8)] transition border-4">
+                <img src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/wall-e.jpg?v=1748736398563" alt="WALL-E" class="w-full h-48 object-contain bg-gray-100 p-4">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 bnl-font">WALL-E UNIDAD</h3>
+                    <p class="text-gray-600 mb-4">Clase W-A-L-L: Compactador de residuos terrestres con IA AXi.</p>
+                    <div class="flex justify-between items-center">
+                      <span class="text-2xl font-bold bnl-blue">$9,999.99</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 2: EVA -->
+            <div class="bg-white shadow-xl overflow-hidden hover:shadow-2xl hover:shadow-[0px_4px_10px_rgba(255,255,255,0.8)] transition border-4">
+                <img src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/eva.jpg?v=1748736611274" alt="EVA" class="w-full h-48 object-contain bg-gray-100 p-4">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 bnl-font">EVA</h3>
+                    <p class="text-gray-600 mb-4">Unidad de escaneo botánico con propulsión iónica.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold bnl-blue">$12,499.99</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Ofertas Especiales -->
+    <section class="py-12">
+      <nav class="bg-black p-4 bnl-font" style="padding-top: 5%">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-white">Ofertas Especiales</h1>
+        <hr />
+      </div>
+    </nav>
+      <br><br><br>
+        <div class="container mx-auto px-4 text-center">
+            <div class="bg-white rounded-lg shadow-lg p-6 max-w-3xl mx-auto hover:shadow-[0px_4px_10px_rgba(255,255,255,0.8)] transition border-4">
+                <h3 class="text-2xl font-bold mb-4 bnl-font">PAQUETE "AXIOM HOME"</h3>
+                <p class="text-gray-600 mb-6">Incluye: 1 WALL-E + 1 EVE + Suscripción VIP a BnL (50 años).</p>
+                <p class="text-4xl font-bold bnl-blue mb-6">$19,999.99 <span class="text-xl line-through text-gray-500">$27,999.99</span></p>
+            </div>
+        </div>
+    </section>
+  
+  <nav class="bg-black p-4 bnl-font" style="padding-top: 5%">
+      <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-white">Contactanos y adquiere nuestros productos</h1>
+        <hr />
+      </div>
+    </nav>
+  <br><br><br>
+   <p class="text-sm mb-8 bnl-font font-bold animated-text text-center text-white">
+        Estamos disponibles para ti en todo momento y cualquier aclaración, estos son nuestros contactos:
+      </p>
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 bnl-font">
+        <div class="p-8" style="margin-top: 5%;">
+          <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/Green%20Flat%20Illustrative%20Retro%20Drinks%20Product%20Logo%20(15).png?v=1750221283224"
+          alt="imagen" class"max-w-lg mx-auto h-auto">
+        </div>
+        <div class="p-8" style="margin-top: 5%;">
+          <br><br>
+          <h1 class="text-2xl font-bold mb-4 text-white text-center">Atención general</h1>
+            <p class="text-white mb-4 text-center">Teléfono: +52 55 1234 5678</p>  
+            <p class="text-white mb-4 text-center">Correo: contacto@BuynLarge.com</p>     
+            <br><br><br>
+          <h1 class="text-2xl font-bold mb-4 text-white text-center">Soporte Técnico</h1>
+            <p class="text-white mb-4 text-center">Teléfono: +52 55 2345 6789</p>  
+            <p class="text-white mb-4 text-center">Correo: soporte@BuynLarge.com</p>     
+        </div>
+      </div>
+
+   <!-- Footer -->
+    <footer class="bnl-bg text-white py-12">
+      <div class="container mx-auto px-4">
+        <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908"
+          style="width: 10%; padding-botom: 5%"
+        />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 bnl-font bnl-white">
+              Buy n Large Corporation
+            </h3>
+            <p class="text-gray-400 bnl-font text-justify text-xs">
+              Buy n Large transforma el futuro mediante innovación tecnológica, impulsa el desarrollo global con soluciones avanzadas y redefine la vida moderna a través del progreso continuo.
+            </p>
+            <p
+              class="text-white font-bold text-xs bnl-font"
+              style="padding-top: 5%"
+            >
+              <a href="nosotros.html">Conócenos</a>
+            </p>
+          </div>
+          <div>
+            <ul class="space-y-2 bnl-font text-xs">
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Términos y condiciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Política de devoluciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Soporte técnico</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-grey text-xs font-bold mb-4 bnl-font">
+              Contactanos
+            </h3>
+            <p class="text-white-400 bnl-font text-xs">
+              Servicio@buynlarge.com
+            </p>
+            <p class="text-white-400 bnl-font text-xs">834 111 2233</p>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-white-400 bnl-font"
+        >
+          <p>© 2025 Buy n Large Corporation. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
