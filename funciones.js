@@ -1,3 +1,9 @@
+function toggleMenu() {
+    const menu = document.getElementById("submenu1");
+    menu.classList.toggle("hidden");
+}
+
+
 function Minimenu() {
     const toggleBtn = document.getElementById('menu-toggle'); // Este es tu botón
     const mainMenu = document.getElementById('main-menu'); // Este es el menú completo
