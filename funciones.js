@@ -9,9 +9,9 @@ function Minimenu(){
     const submenu = document.getElementById('submenu1');
 
     toggleBtn.addEventListener('click', () => {
-        mainMenu.classList.toggle('hidden');
+        mainMenu.classList.toggle('visible');
     });
     function toggleSubmenu() {
-        submenu.classList.toggle('hidden');
+        submenu.classList.toggle('visible');
     }
 }
