@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy n Large Corporation - Organización</title>
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/logo.ico?v=1748731719709"
+      type="image/png"
+    />
+    <script src="funciones.js"></script>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente similar a la de WALL-E (?)-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .bnl-font {
+        font-family: "Orbitron", sans-serif;
+      }
+      .bnl-bg {
+        background-color: black;
+      }
+      .img-bg {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/bnl%20museo.png?v=1749442523617");
+        background-size: cover;
+      }
+      .img-bg2 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/space.jpg?v=1748752394631");
+        background-size: cover;
+      }
+      .img-bg3 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/fondo?v=1749338675834");
+        background-size: cover;
+      }
+      .img-bg4 {
+        background-image: url("https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/organigrama?v=1749338622601");
+        background-size: auto;
+      }
+      .bnl-blue {
+        color: #0077b6; /* Azul corporativo BnL (?)*/
+      }
+      .bnl-grey {
+        color: #d7d7d7; /* Azul corporativo BnL (?)*/
+      }
+      .bnl-btn {
+        background-color: #0077b6;
+        color: white;
+      }
+      .bnl-btn:hover {
+        background-color: #003d7a;
+      }
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(150px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .animated-text {
+        animation: fadeInUp 1s ease-in-out;
+      }
+      body::-webkit-scrollbar {
+        width: 12px; /* width of the entire scrollbar */
+      }
+
+      body::-webkit-scrollbar-track {
+        background: black; /* color of the tracking area */
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: blue; /* color of the scroll thumb */
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 3px solid black; /* creates padding around scroll thumb */
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+   <!-- Navbar -->
+   <nav class="bnl-bg shadow-lg fixed top-0 w-full z-50 border-b-4 border-blue-500">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+          <a href="index.html"><img src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908" style="width: 30%;"></a>
+            <div class="hidden md:flex space-x-8 bnl-font">
+            <a href="nosotros.html" class="text-white hover:text-gray-700">Nuestra Compañía</a>
+            <div class="relative">
+                <button onclick="toggleMenu()" class="text-white hover:text-gray-700">
+                    Nuestro Proceso
+                </button>
+                <div id="submenu1" class="absolute hidden bg-black text-white shadow-md rounded-lg mt-2 w-64">
+                    <a href="planeacion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Planeación</a>
+                    <a href="organización.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Organización</a>
+                    <a href="control.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Control</a>
+                    <a href="direccion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Dirección</a>
+                </div>
+            </div>
+            <a href="productos.html" class="text-white hover:text-gray-700">Productos</a>
+            <a href="servicios.html" class="text-white hover:text-gray-700">Servicios</a>
+        </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-white hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+                <button id="menu-toggle" class="md:hidden p-2 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto">
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+  <!-- Producto 1 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+    <img src="/img/GARE.png" alt="GARE" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">GAR•E</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot cortacésped para el hogar.</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-25%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 2 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+    <img src="/img/BURNE.png" alt="BURNE" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">BURN•E</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot soldadores.</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-21%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 3 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+    <img src="/img/SALLE.png" alt="SALLE" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">SALL•E</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot aspiradora para el hogar</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-25%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 4 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+    <img src="/img/WENDE.png" alt="WENDE" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">WEND•E</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot de lavado y planchado de ropa para el hogar.</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-25%</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<br><br><br><br>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+  <!-- Producto 5 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+    <img src="/img/BRLA.png" alt="BRLA" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">BRL•A</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot sombrilla.</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-25%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 6 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+    <img src="/img/SUPPLYR.png" alt="SUPPLYR" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">SUPPLY•R</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot de suministros.</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-21%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 7 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+    <img src="/img/MO.png" alt="MO" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">M•O</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot de limpieza.</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-25%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 8 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+   <img src="/img/PRT.png" alt="PRT" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">PR•T</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot estilista.</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-25%</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<br><br><br><br>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+  <!-- Producto 9 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+    <img src="/img/VAQM.png" alt="VAQM" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">VAQ•M</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot aspiradora.</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-25%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Producto 10 -->
+  <div class="bg-white border rounded-lg shadow-md hover:shadow-lg transition overflow-hidden flex flex-col justify-between">
+    <img src="/img/NANE.png" alt="NANE" class="h-auto w-full object-contain max-h-[400px] bg-white">
+    <div class="p-4">
+      <h3 class="text-lg font-semibold">NAN•E</h3>
+      <p class="text-gray-600 text-sm mb-2">Robot niñera.</p>
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-red-600 font-bold">MXN $3000.00</span>
+        <span class="text-white bg-red-500 px-2 py-1 rounded-full text-xs">-21%</span>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<!-- Footer -->
+    <footer class="bnl-bg text-white py-12">
+      <div class="container mx-auto px-4">
+        <img
+          src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908"
+          style="width: 10%; padding-botom: 5%"
+        />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 bnl-font bnl-white">
+              Buy n Large Corporation
+            </h3>
+            <p class="text-gray-400 bnl-font text-justify text-xs">
+              Buy n Large transforma el futuro mediante innovación tecnológica, impulsa el desarrollo global con soluciones avanzadas y redefine la vida moderna a través del progreso continuo.
+            </p>
+            <p
+              class="text-white font-bold text-xs bnl-font"
+              style="padding-top: 5%"
+            >
+              <a href="nosotros.html">Conócenos</a>
+            </p>
+          </div>
+          <div>
+            <ul class="space-y-2 bnl-font text-xs">
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Términos y condiciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Política de devoluciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white-400 hover:text-gray-700"
+                  >Soporte técnico</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-grey text-xs font-bold mb-4 bnl-font">
+              Contactanos
+            </h3>
+            <p class="text-white-400 bnl-font text-xs">
+              Servicio@buynlarge.com
+            </p>
+            <p class="text-white-400 bnl-font text-xs">834 111 2233</p>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-white-400 bnl-font"
+        >
+          <p>© 2025 Buy n Large Corporation. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
