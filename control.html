@@ -84,20 +84,11 @@
     </style>
   </head>
   <body class="bg-black">
-    <!-- menu -->
-    <nav
-      class="bnl-bg shadow-lg fixed top-0 w-full z-50 border-b-4 border-blue-500"
-    >
-      <div
-        class="container mx-auto px-4 py-3 flex justify-between items-center"
-      >
-        <a href="index.html">
-          <img
-            src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908"
-            style="width: 30%"
-          />
-        </a>
-        <div class="hidden md:flex space-x-8 bnl-font">
+    <!-- Navbar -->
+   <nav class="bnl-bg shadow-lg fixed top-0 w-full z-50 border-b-4 border-blue-500">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+          <a href="index.html"><img src="https://cdn.glitch.global/2e63d3c6-173c-45a1-8ca3-27c4b02f6036/thumbnails%2Flogo.png?1748724835908" style="width: 30%;"></a>
+            <div class="hidden md:flex space-x-8 bnl-font">
             <a href="nosotros.html" class="text-white hover:text-gray-700">Nuestra Compañía</a>
             <div class="relative">
                 <button onclick="toggleMenu()" class="text-white hover:text-gray-700">
@@ -110,42 +101,22 @@
                     <a href="direccion.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Dirección</a>
                 </div>
             </div>
+            <a href="productos.html" class="text-white hover:text-gray-700">Productos</a>
+            <a href="servicios.html" class="text-white hover:text-gray-700">Servicios</a>
         </div>
-        <div class="flex items-center space-x-4">
-          <a href="#" class="text-white hover:text-gray-700">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-              />
-            </svg>
-          </a>
-          <button class="md:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-white hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+                <button id="menu-toggle" class="md:hidden p-2 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Encabezado  -->
